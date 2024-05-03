@@ -9,11 +9,10 @@ function Question({ question, onAnswered }) {
       setTimeRemaining(timeRemaining - 1)
     }, 1000)
 
-    if(timeRemaining === 0){
-      return function cleanup(){
+    return function cleanup(){
       clearTimeout(timeOut)
       onAnswered(false)
-    }}
+    }
   },[timeRemaining])
 
   function handleAnswer(isCorrect) {
